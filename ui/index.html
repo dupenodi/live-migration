@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Server</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="bezel">
+      <article class="panel">
+        <header>
+          <h1>Server</h1>
+          <p id="place">Running inside <span class="chip chip-a"><span class="chip-dot" aria-hidden="true"></span>VM A</span></p>
+        </header>
+        <p class="legend">
+          Each line is one second from this server.
+        </p>
+        <div id="output" class="well" aria-live="polite"></div>
+        <dl id="metrics" class="metrics" hidden>
+          <div>
+            <dt>Total time</dt>
+            <dd id="metric-total"></dd>
+          </div>
+          <div>
+            <dt>VM pause</dt>
+            <dd id="metric-pause"></dd>
+          </div>
+          <div>
+            <dt>Longest gap</dt>
+            <dd id="metric-gap"></dd>
+          </div>
+          <div>
+            <dt>Bytes moved</dt>
+            <dd id="metric-bytes"></dd>
+          </div>
+          <div class="metric-wide">
+            <dt>Continuity</dt>
+            <dd id="metric-continuity"></dd>
+          </div>
+        </dl>
+        <p id="move-note" class="note" hidden></p>
+        <div class="actions" id="actions">
+          <button type="button">Move this server to <span class="chip chip-b"><span class="chip-dot" aria-hidden="true"></span>VM B</span></button>
+          <button type="button">Move this server to <span class="chip chip-c"><span class="chip-dot" aria-hidden="true"></span>VM C</span></button>
+        </div>
+        <ol id="steps" class="steps" hidden></ol>
+      </article>
+    </div>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

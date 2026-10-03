@@ -1,0 +1,8 @@
+#!/bin/sh
+# First process inside the guest. The kernel already gave eth0 its address.
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+ip link set lo up
+echo "guest init"
+python3 /opt/demo/agent.py 9000 &
+exec python3 /opt/demo/server.py 8080
